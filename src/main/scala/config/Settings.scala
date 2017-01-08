@@ -6,6 +6,9 @@ object Settings {
   private val config = ConfigFactory.load()
   object ClickStreamGeneratorSettings {
     private val settings = config.getConfig("streamsettings")
+    lazy val appName = settings.getString("app-name")
+    lazy val sparkMaster = settings.getString("spark-master")
+    lazy val numCores = settings.getString("spark-number-of-cores")
     lazy val batchSize = settings.getInt("batch-size")
     lazy val productRangeStart = settings.getInt("product-range-start")
     lazy val productRangeEnd = settings.getInt("product-range-end")
@@ -14,5 +17,8 @@ object Settings {
     lazy val promoAvailabilityFactor = settings.getInt("promo-availability-factor")
     lazy val streamDelay = settings.getInt("stream-delay-ms")
     lazy val tmpFile = settings.getString("tmp-file")
+
+
+
   }
 }
