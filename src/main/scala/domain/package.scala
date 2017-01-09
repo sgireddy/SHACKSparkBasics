@@ -1,6 +1,6 @@
 package object domain {
   /** Created by Shashi Gireddy (https://github.com/sgireddy) on 1/2/17 */
-  case class Activity(
+  case class Activity (
                      timestamp: Long,
                      productId: Int,
                      userId: Int,

@@ -1,17 +1,13 @@
 package batch
 import config.Settings
 import domain.Activity
-import net.liftweb.json._
-import net.liftweb.json.Serialization.write
 import org.apache.spark.{SparkConf, SparkContext}
-import scala.util._
 import util._
 /** Created by Shashi Gireddy (https://github.com/sgireddy) on 1/2/17 */
 object BatchRDD extends App {
   import Settings.ClickStreamGeneratorSettings._
   val conf = new SparkConf().setAppName(appName).setMaster(s"${sparkMaster}[${numCores}]")
   val sc = new SparkContext(conf)
-  implicit val formats = DefaultFormats
   val sourceFile = tmpFile
   val input = sc.textFile(sourceFile)
 
@@ -24,18 +20,25 @@ object BatchRDD extends App {
   //  }
 
   //SG: Discard invalid lines Make it readable using for-comprehensions instead of flatmaps
-  //  val inputRDD = for {
-  //    line <- input
-  //    jv <- Try(parse(line)).toOption
-  //    act <- Try(jv.extract[Activity]).toOption
-  //  } yield act
+//    val inputRDD = for {
+//      line <- input
+//      jv <- Try(parse(line)).toOption
+//      act <- Try(jv.extract[Activity]).toOption
+//    } yield act
 
   //SG: Best of all, for-comprehensions with errorHandler from our util package
+  //  val inputRDD = for {
+  //    line <- input
+  //    jv <- errorHandler(Try(parse(line)))
+  //    act <- errorHandler(Try(jv.extract[Activity]))
+  //  } yield act
+
+  //SG: Push generic logic to util package,  json parsing & error handling
   val inputRDD = for {
     line <- input
-    jv <- errorHandler(Try(parse(line)))
-    act <- errorHandler(Try(jv.extract[Activity]))
-  } yield act
+    activity <- tryParse[Activity](line)
+  } yield activity
+
 
   val keyedByProduct = inputRDD.keyBy( a => a.productId).cache()
   println(keyedByProduct.count())
