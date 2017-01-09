@@ -10,7 +10,12 @@ Let's assume that we inherited a small company "ISellInstoreAndOnline.com". The 
 These logical groups uses Apache Kafka as common message bus. The webstore uses REDIS session manager. Merchandising system is responsible for Catalog and Promo optimization.
 
 Our goal is to improve promo efficiency by utilizing click stream data that the session provides us through Kafka. 
-Later we will introduce <b>Hadoop & Lambda Architecture</b> to build promotions based on historical trends.   
+Later we will introduce <b>Hadoop & Lambda Architecture</b> to build promotions based on historical trends. 
+  
+ Usage: 
+  Change application.conf under resources
+  Run "ClickStreamGenerator" under generators package to generate sample data
+  Run "BatchRDD" under batch package to run spark job
 
 Here is a simple Activity class:
 
