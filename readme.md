@@ -12,10 +12,10 @@ These logical groups uses Apache Kafka as common message bus. The webstore uses 
 Our goal is to improve promo efficiency by utilizing click stream data that the session provides us through Kafka. 
 Later we will introduce <b>Hadoop & Lambda Architecture</b> to build promotions based on historical trends. 
   
- Usage: 
-  Change application.conf under resources
-  Run "ClickStreamGenerator" under generators package to generate sample data
-  Run "BatchRDD" under batch package to run spark job
+ Usage: <br />
+  Change application.conf under resources <br />
+  Run "ClickStreamGenerator" under generators package to generate sample data <br />
+  Run "BatchRDD" under batch package to run spark job <br />
 
 Here is a simple Activity class:
 
