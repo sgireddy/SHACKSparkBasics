@@ -46,11 +46,11 @@ Here is some sample data stream represented as JSON strings:
 <h3>Implementation Plan</h3>
 
 Our spark code is responsible for generating in distributed in-memory data sets where we could perform map-reduce operations. 
-1. We will start with generating RDD[Activity] and perform some analytics on it
-2. Generate Data Frames and register temp table so we could perform SQL operations on it
-3. Integrate with Kafka using spark-streams library
-4. Persist to Cassandra using spark-cassandra connector
-5. Introduce Hadoop & Lambda Architecture
+<p> 1. We will start with generating RDD[Activity] and perform some analytics on it </p>
+<p> 2. Generate Data Frames and register temp table so we could perform SQL operations on it </p>
+<p> 3. Integrate with Kafka using spark-streams library </p>
+<p> 4. Persist to Cassandra using spark-cassandra connector </p>
+<p> 5. Introduce Hadoop & Lambda Architecture </p>
 
 <h2>Investigate Spark Code and Improve it </h2>
 
