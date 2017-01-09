@@ -40,13 +40,13 @@ The session manager is responsible for capturing, maintaining click stream state
 
 Here is some sample data stream represented as JSON strings:
 
-{"timestamp":1483913095714,"productId":6219,"userId":18391,"referrer":"facebook","retailPrice":3,"productDiscountPct":10,"cartDiscountPct":0,"actionCode":1,"marginPct":15}
-{"timestamp":1483913095811,"productId":2965,"userId":57630,"referrer":"site","retailPrice":28,"productDiscountPct":0,"cartDiscountPct":0,"actionCode":2,"marginPct":25}
-{"timestamp":1483913095811,"productId":4182,"userId":97544,"referrer":"google","retailPrice":42,"productDiscountPct":10,"cartDiscountPct":0,"actionCode":0,"marginPct":30}
-{"timestamp":1483913095812,"productId":2565,"userId":78936,"referrer":"site","retailPrice":12,"productDiscountPct":0,"cartDiscountPct":0,"actionCode":2,"marginPct":25}
-{"timestamp":1483913095812,"productId":8305,"userId":39827,"referrer":"facebook","retailPrice":20,"productDiscountPct":20,"cartDiscountPct":10,"actionCode":2,"marginPct":25}
-{"timestamp":1483913095813,"productId":3748,"userId":13330,"referrer":"site","retailPrice":73,"productDiscountPct":0,"cartDiscountPct":0,"actionCode":2,"marginPct":30}
-{"timestamp":1483913095814,"productId":1781,"userId":94564,"referrer":"yahoo","retailPrice":93,"productDiscountPct":0,"cartDiscountPct":0,"actionCode":0,"marginPct":10}
+        {"timestamp":1483913095714,"productId":6219,"userId":18391,"referrer":"facebook","retailPrice":3,"productDiscountPct":10,"cartDiscountPct":0,"actionCode":1,"marginPct":15}
+        {"timestamp":1483913095811,"productId":2965,"userId":57630,"referrer":"site","retailPrice":28,"productDiscountPct":0,"cartDiscountPct":0,"actionCode":2,"marginPct":25}
+        {"timestamp":1483913095811,"productId":4182,"userId":97544,"referrer":"google","retailPrice":42,"productDiscountPct":10,"cartDiscountPct":0,"actionCode":0,"marginPct":30}
+        {"timestamp":1483913095812,"productId":2565,"userId":78936,"referrer":"site","retailPrice":12,"productDiscountPct":0,"cartDiscountPct":0,"actionCode":2,"marginPct":25}
+        {"timestamp":1483913095812,"productId":8305,"userId":39827,"referrer":"facebook","retailPrice":20,"productDiscountPct":20,"cartDiscountPct":10,"actionCode":2,"marginPct":25}
+        {"timestamp":1483913095813,"productId":3748,"userId":13330,"referrer":"site","retailPrice":73,"productDiscountPct":0,"cartDiscountPct":0,"actionCode":2,"marginPct":30}
+        {"timestamp":1483913095814,"productId":1781,"userId":94564,"referrer":"yahoo","retailPrice":93,"productDiscountPct":0,"cartDiscountPct":0,"actionCode":0,"marginPct":10}
 
 <h3>Implementation Plan</h3>
 
