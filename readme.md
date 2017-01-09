@@ -10,7 +10,7 @@ Let's assume that we inherited a small company "ISellInstoreAndOnline.com". The 
 These logical groups uses Apache Kafka as message bus. The webstore uses REDIS session manager. Merchandising system is responsible for Catalog and Promo optimization.
 
 Our goal is to improve promo efficiency by utilizing click stream data that the session provides us through Kafka. 
-Later we will introduce <h2>Hadoop & Lambda Architecture</h2> to build promotions based on historical trends.   
+Later we will introduce <b>Hadoop & Lambda Architecture</b> to build promotions based on historical trends.   
 
 Here is a simple Activity class:
 
