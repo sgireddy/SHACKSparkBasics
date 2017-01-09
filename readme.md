@@ -36,7 +36,7 @@ product & cart level discount percentages represent promotions impacting retail 
 
 Action Code indicates activity type: "0 -> Visit to Product Details Page", "1 -> Product Added to Cart", "2 -> Purchase". 
 
-The session manager is responsible for capturing, maintaining click stream state and provide the data upon a <b> successful purchase </b> or after <b>user session expires (say 15 minutes)
+The session manager is responsible for capturing, maintaining click stream state and provide the data upon a <b> successful purchase </b> or after <b>user session expires </b> (say 15 minutes)
 
 Here is some sample data stream represented as JSON strings:
 
