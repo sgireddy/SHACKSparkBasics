@@ -6,25 +6,25 @@ This work is a part of multi series blog starting with Spark Fundamentals.
 SHACK (Scala/Spark, H-Hadoop, A-All things Apache, C-Cassandra, K-Kafka)
 
 Our fictitious scenario: 
-Let's assume that we inherited a small company "ISellInstoreAndOnline.com". The company is subdivided into logical groups, Stores, WebStore, Merchandising System, Distribution Systems and Inventory Management System.
-These logical groups uses Apache Kafka as message bus. The webstore uses REDIS session manager. Merchandising system is responsible for Catalog and Promo optimization.
+Let's assume that we inherited a small company "ISellInstoreAndOnline.com". The company is subdivided into logical groups: Stores, WebStore, Merchandising System, Distribution Systems and Inventory Management System.
+These logical groups uses Apache Kafka as common message bus. The webstore uses REDIS session manager. Merchandising system is responsible for Catalog and Promo optimization.
 
 Our goal is to improve promo efficiency by utilizing click stream data that the session provides us through Kafka. 
 Later we will introduce <b>Hadoop & Lambda Architecture</b> to build promotions based on historical trends.   
 
 Here is a simple Activity class:
 
-  case class Activity(
-                     timestamp: Long,
-                     productId: Int,
-                     userId: Int,
-                     referrer: String,
-                     retailPrice: Int,
-                     productDiscountPct: Int,
-                     cartDiscountPct: Int,
-                     actionCode: Int,
-                     marginPct: Int
-                     )
+      case class Activity(
+                         timestamp: Long,
+                         productId: Int,
+                         userId: Int,
+                         referrer: String,
+                         retailPrice: Int,
+                         productDiscountPct: Int,
+                         cartDiscountPct: Int,
+                         actionCode: Int,
+                         marginPct: Int
+                         )
 
 Give we don't have a real world session manager, I built the package generators to provide random yet thoughtfully simulated data stream. 
 product & cart level discount percentages represent promotions impacting retail price to produce effective retail, where as margin dictates our profitability.
